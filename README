@@ -1,0 +1,20 @@
+Summary: 
+	This tool demonstrates a method for allowing analysts with no SQL knowledge to run SQL reports and export them to CSV's
+
+Detail:
+	This tool works by creating a ODBC connection to a MSSQL database and prompts for user authentication. Once connected the tool displays available queries to be ran, as defined in a reports file, than can be ran individually or as a batch. Reports that return rows may be printed out to CSV's named with the query title and defined headers in a folder marked titled with the current date. 
+	
+	The tool is best used by compiling it via pyinstaller into a one-file executable which can be provided to non-technical users. 
+	
+Requirements:
+	- The current ODBC 17 Driver from Microsoft installed on target machines (https://www.microsoft.com/en-us/download/details.aspx?id=56567)
+	- The Pyinstaller package installed on your machine  (pip install pyinstaller)
+	- Server location and access
+	- Database name and access
+	- Active credentials to the database
+	
+Usage:
+	+ Edit the SQL_Report_Driver.py file to include your target Server and Database
+	+ Compile the code via pyinstaller into one file (pyinstaller -F SQL_Report_Driver.py)
+	+ Locate the executable in the created 'dist' folder
+	+ Execute
